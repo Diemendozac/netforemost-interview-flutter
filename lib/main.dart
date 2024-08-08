@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:interview_flutter/screens/home_screen/home_screen.dart';
+import 'package:interview_flutter/theme/theme.dart';
 
 void main() => runApp(const MyApp());
 
@@ -8,15 +10,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      theme: AppTheme.lightTheme,
       title: 'Material App',
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text('NetForemost'),
-        ),
-        body: const Center(
-          child: Text('Hello World'),
-        ),
-      ),
+      debugShowCheckedModeBanner: false,
+      initialRoute: HomePage.route,
+      routes: {
+        HomePage.route : (_) => const HomePage()
+      },
     );
   }
 }
